@@ -111,6 +111,7 @@ int main(void)
   while (1)
   {
     LED_Trigger();
+    HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
