@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "bsp_led.h"
 #include "can.h"
 #include "tim.h"
 #include "usart.h"
