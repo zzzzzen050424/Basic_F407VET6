@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "bsp_led.h"
 #include "can.h"
 #include "tim.h"
 #include "usart.h"
@@ -110,7 +111,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+    LED_Trigger();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
