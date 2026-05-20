@@ -49,6 +49,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     boards/Delay/bsp_delay.c
     boards/CAN/bsp_can.c
     boards/OLED/OLED.c
+    boards/USART/bsp_usart.c
 )
 
 # Add include paths
@@ -59,6 +60,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     boards/Delay
     boards/CAN
     boards/OLED
+    boards/USART
 )
 
 # Add project symbols (macros)

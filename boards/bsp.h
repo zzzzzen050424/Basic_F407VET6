@@ -19,5 +19,6 @@ typedef uint8_t bool_t;
 #include "bsp_delay.h"
 #include "bsp_can.h"
 #include "OLED.h"
+#include "bsp_usart.h"
 /*******************************************/
 #endif
