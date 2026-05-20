@@ -18,7 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "bsp_led.h"
 #include "can.h"
+#include "stm32f4xx_hal_uart.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -26,6 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp.h"
+#include "bsp_usart.h"
 #include <stdint.h>
 /* USER CODE END Includes */
 
@@ -48,8 +51,6 @@
 
 /* USER CODE BEGIN PV */
 
-uint8_t RxData[10];
-uint8_t TxData[10] = "Hello";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,16 +103,18 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  USART1_Init();
   OLED_Init();
   OLED_ShowString(1, 1, "Hello, World!");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint8_t hello_msg[] = "Hello";
   while (1)
   {
-    LED_Trigger();
-    HAL_Delay(500);
+    USART1_Send_IT(hello_msg, 5);
+    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
